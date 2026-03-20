@@ -3,29 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservations - Cozy Mountain Cabin</title>
-
-    <meta name="description" content="Book your stay at our cozy mountain cabin. Contact us to reserve your getaway in nature.">
-
+    <title>Reservation Page</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; text-align: center; }
-        a { color: #4a6741; text-decoration: none; }
-        .button { display:inline-block; background:#4a6741; color:white; padding:12px 20px; border-radius:6px; margin-top:15px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .reservation-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .reservation-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .reservation-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .reservation-form input,
+        .reservation-form select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .reservation-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .reservation-form button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Reservations</h1>
+    <form class="reservation-form" action="#" method="post">
+        <h2>Make a Reservation</h2>
 
-        <p>To book your stay, please email us at:</p>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
 
-        <p>
-            <a href="mailto:qwigwa@gmail.com">qwigwa@gmail.com</a>
-        </p>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
 
-        <a href="index.html" class="button">← Back to Home</a>
-    </div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+        <label for="checkin">Check-In Date</label>
+        <input type="date" id="checkin" name="checkin" required>
+
+        <label for="checkout">Check-Out Date</label>
+        <input type="date" id="checkout" name="checkout" required>
+
+        <label for="people">Number of People</label>
+        <input type="number" id="people" name="people" min="1" max="20" value="1" required>
+
+        <button type="submit">Reserve Now</button>
+    </form>
 </body>
 </html>
