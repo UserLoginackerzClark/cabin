@@ -34,20 +34,22 @@
         .reservation-form input,
         .reservation-form select {
             width: 100%;
-            padding: 8px 10px;
+            padding: 10px; /* Slightly larger for easier tapping */
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; /* Prevents input from overflowing container */
         }
         .reservation-form button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #007BFF;
             color: white;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
         }
         .reservation-form button:hover {
             background-color: #0056b3;
@@ -55,7 +57,7 @@
     </style>
 </head>
 <body>
-    <form class="reservation-form" action="#" method="post">
+    <form class="reservation-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
         <h2>Make a Reservation</h2>
 
         <label for="name">Full Name</label>
@@ -65,7 +67,7 @@
         <input type="email" id="email" name="email" placeholder="example@email.com" required>
 
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
 
         <label for="checkin">Check-In Date</label>
         <input type="date" id="checkin" name="checkin" required>
