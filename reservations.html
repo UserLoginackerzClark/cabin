@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
         }
         .reservation-form {
@@ -34,11 +34,11 @@
         .reservation-form input,
         .reservation-form select {
             width: 100%;
-            padding: 10px; /* Slightly larger for easier tapping */
+            padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Prevents input from overflowing container */
+            box-sizing: border-box; 
         }
         .reservation-form button {
             width: 100%;
@@ -57,7 +57,7 @@
     </style>
 </head>
 <body>
-    <form class="reservation-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+    <form class="reservation-form" action="https://cabin-form-handler.pickledhomes.workers.dev/" method="POST">
         <h2>Make a Reservation</h2>
 
         <label for="name">Full Name</label>
