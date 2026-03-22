@@ -5,42 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery | Dog Run Cabin</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; text-align: center; }
-        h1 { color: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #fdfdfd; text-align: center; color: #333; }
+        h1 { color: #4a6741; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 30px; }
+        
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 0 auto;
         }
-        .gallery-grid img {
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
             width: 100%;
-            height: 200px;
-            object-fit: cover; /* Keeps photos from looking stretched */
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-            cursor: pointer;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
-        .gallery-grid img:hover { transform: scale(1.05); }
-        .nav-link { display: inline-block; margin-top: 20px; text-decoration: none; color: #007BFF; font-weight: bold; }
+
+        .nav-links { margin-top: 40px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn-back { color: #4a6741; border: 2px solid #4a6741; }
+        .btn-back:hover { background: #4a6741; color: white; }
     </style>
 </head>
 <body>
 
     <h1>Cabin Gallery</h1>
+    <p>A glimpse into your Berryville retreat.</p>
     
     <div class="gallery-grid">
-        <img src="your-photo-1.jpg" alt="Cabin Exterior">
-        <img src="your-photo-2.jpg" alt="Living Room">
-        <img src="your-photo-3.jpg" alt="Kitchen Area">
-        <img src="your-photo-4.jpg" alt="Bedroom View">
-        <img src="your-photo-5.jpg" alt="Back Deck">
-        <img src="your-photo-6.jpg" alt="Nearby Trails">
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/cabin-exterior.jpg" alt="Cabin Exterior">
+        </div>
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/living-room.jpg" alt="Living Room">
+        </div>
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/kitchen.jpg" alt="Full Kitchen">
+        </div>
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/bedroom.jpg" alt="Bedroom View">
+        </div>
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/deck-view.jpg" alt="Private Deck">
+        </div>
+        <div class="gallery-item">
+            <img src="https://photos.dogruncabin.com/cdn-cgi/image/width=800,format=auto/woods.jpg" alt="Surrounding Woods">
+        </div>
     </div>
 
-    <a href="index.html" class="nav-link">← Back to Home</a>
+    <div class="nav-links">
+        <a href="index.html" class="btn btn-back">← Back to Home</a>
+    </div>
 
 </body>
 </html>
